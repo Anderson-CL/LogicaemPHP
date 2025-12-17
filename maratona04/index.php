@@ -73,25 +73,22 @@ Se o valor da compra for superior a R$1000,00, um desconto de 20% será aplicado
 A fórmula será: */
 
 $valor = 1200;
-$entrega = 0.15;
-$taxa = $valor * $entrega;
-$subtotal = $valor + $taxa; // até aqui menos de 1000
+$entrega = $valor * 0.15;
+$desconto1 = $valor * 0.20;
 
-$desconto = 0.0;
-if ($valor > 999)
+$totaldesc1 = ($valor - $desconto1) + $entrega;
+$totalsem = ($valor + $entrega);
+
+if ($valor > 1000)
 {
-   $desconto = $subtotal *0.20;
-    echo  "  20% de Desconto Aplicado" ;
+    echo  $totaldesc1 . "  20% de Desconto Aplicado" ;
 }
 
 
 else 
 {
-    echo "";
+    echo $totalsem . "Sem desconto pow";
 }
-
-
-$subtotal * 0.20;
 
 //$total = $subtotal - ($subtotal * 0.20) = $subtotal * 0.80;
 
